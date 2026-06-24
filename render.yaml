@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: dimaplac-formulario-despacho
+    env: node
+    plan: free
+    buildCommand: ""
+    startCommand: node server.js
+    autoDeploy: true
+    envVars:
+      - key: NODE_VERSION
+        value: 22.13.0
+      - key: HOST
+        value: 0.0.0.0
+      - key: NOTION_DATA_SOURCE_ID
+        value: 7de7ae5f-b2dc-830b-b2ad-07e7cb0a643b
+      - key: NOTION_VERSION
+        value: 2025-09-03
+      - key: NOTION_TOKEN
+        sync: false
+      - key: FORM_SHARED_PASSWORD
+        sync: false
+      - key: FORM_SESSION_SECRET
+        sync: false
