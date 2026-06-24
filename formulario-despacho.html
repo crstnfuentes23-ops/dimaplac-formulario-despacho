@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Solicitud de despacho Dimaplac</title>
+    <link rel="stylesheet" href="/formulario-despacho.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <section class="hero">
+        <div>
+          <p class="brand">Dimaplac · Logística</p>
+          <h1>Solicitud de despacho</h1>
+          <p class="lead">Formulario de ingreso rápido para crear una solicitud directamente en Notion.</p>
+        </div>
+        <div class="hero-card">
+          <span class="status-dot"></span>
+          <span>Destino: Notion / aapp</span>
+        </div>
+      </section>
+
+      <section id="loginPanel" class="panel auth-panel" hidden>
+        <div>
+          <h2>Entrar al formulario</h2>
+          <p class="muted">Ingresa la clave compartida.</p>
+        </div>
+        <form id="loginForm" class="auth-form">
+          <label>
+            Clave
+            <input id="password" type="password" autocomplete="current-password" required />
+          </label>
+          <button class="btn primary" type="submit">Entrar</button>
+        </form>
+        <p id="loginMessage" class="message" role="status"></p>
+      </section>
+
+      <section id="formPanel" class="panel form-panel" hidden>
+        <div class="panel-heading">
+          <div>
+            <h2>Datos del pedido</h2>
+            <p class="muted">Los campos se guardarán como una fila nueva en Notion con estado pendiente.</p>
+          </div>
+          <button id="logoutBtn" class="btn ghost" type="button">Salir</button>
+        </div>
+
+        <form id="dispatchForm" class="dispatch-form">
+          <div class="grid two">
+            <label>
+              Nombre cliente
+              <input name="nombreCliente" autocomplete="name" required />
+            </label>
+            <label>
+              RUT
+              <input name="rut" placeholder="19.348.448-4" required />
+            </label>
+          </div>
+
+          <div class="grid two">
+            <label>
+              Número de contacto
+              <input name="numeroContacto" inputmode="tel" autocomplete="tel" required />
+            </label>
+            <label>
+              Correo de contacto
+              <input name="correoContacto" placeholder="Sin Correo" />
+            </label>
+          </div>
+
+          <label>
+            Dirección
+            <input name="direccion" autocomplete="street-address" required />
+          </label>
+
+          <div class="grid two">
+            <label>
+              Zona
+              <input name="zona" required />
+            </label>
+            <label>
+              Fecha comprometida entrega
+              <input name="fechaComprometida" type="date" required />
+            </label>
+          </div>
+
+          <div class="grid two">
+            <label>
+              N° boleta/factura
+              <input name="facturaBoleta" required />
+            </label>
+            <label>
+              Pedido compuesto
+              <input name="pedidoCompuesto" required />
+            </label>
+          </div>
+
+          <div class="grid two">
+            <label>
+              Bodegas
+              <input name="bodegas" required />
+            </label>
+            <label>
+              Nombre del solicitante
+              <input name="nombreSolicitante" autocomplete="name" required />
+            </label>
+          </div>
+
+          <label>
+            Notas u observaciones
+            <textarea name="notas" rows="4"></textarea>
+          </label>
+
+          <div class="actions">
+            <button id="fillExampleBtn" class="btn ghost" type="button">Rellenar ejemplo</button>
+            <button id="submitBtn" class="btn primary" type="submit">Enviar a Notion</button>
+          </div>
+        </form>
+        <p id="formMessage" class="message" role="status"></p>
+      </section>
+    </main>
+
+    <script src="/formulario-despacho.js" defer></script>
+  </body>
+</html>
