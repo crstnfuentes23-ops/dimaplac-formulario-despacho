@@ -102,7 +102,7 @@ loginForm.addEventListener("submit", async (event) => {
 dispatchForm.addEventListener("submit", async (event) => {
   event.preventDefault();
   submitBtn.disabled = true;
-  setMessage(formMessage, "Enviando a Notion...");
+  setMessage(formMessage, "Enviando...");
   try {
     const data = await api("/api/dimaplac-form/submissions", {
       method: "POST",
