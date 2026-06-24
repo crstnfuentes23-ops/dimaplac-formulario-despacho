@@ -1,0 +1,13 @@
+{
+  "name": "dimaplac-formulario-despacho",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Formulario de solicitud de despacho Dimaplac conectado a Notion.",
+  "main": "server.js",
+  "engines": {
+    "node": ">=22.5.0"
+  },
+  "scripts": {
+    "start": "node server.js"
+  }
+}
